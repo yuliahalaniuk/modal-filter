@@ -21,11 +21,11 @@ type FormData = {
 };
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { register, handleSubmit } = useForm<FormData>();
 
   const filterModalToggle = () => {
-    setIsOpen((state) => !state);
+    setIsOpen((state: boolean) => !state);
   };
 
   const onSubmitHandler: SubmitHandler<FormData> = (data) => {

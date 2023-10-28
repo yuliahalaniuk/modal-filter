@@ -15,12 +15,12 @@ import {
 } from "@/app/PageStyled";
 
 export const BrandSection: React.FC<SectionProps> = ({ register }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { brandList } = useContext(AppContext);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState<string>("");
 
   const categoryToggle = () => {
-    setIsOpen((state) => !state);
+    setIsOpen((state: boolean) => !state);
   };
 
   const filterBrands = () => {
