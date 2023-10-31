@@ -15,14 +15,18 @@ import {
   ModalHead,
   CloseIcon,
 } from "./PageStyled";
+import { useFilter } from "@/components/Test";
 
 type FormData = {
-  [key: string]: boolean;
+  brand: string[];
+  color: string[];
 };
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { register, handleSubmit } = useForm<FormData>();
+
+  console.log("in children", useFilter());
 
   const filterModalToggle = () => {
     setIsOpen((state: boolean) => !state);
@@ -43,22 +47,21 @@ export default function Home() {
         Filter
       </Button>
       {isOpen && (
-        <>
-          <Overlay>
-            <ModalBody>
-              <ModalHead>
-                <h2>Підбір параметрів</h2>
-                <CloseIcon onClick={filterModalToggle} />
-              </ModalHead>
-              <form onSubmit={handleSubmit(onSubmitHandler)}>
-                <BrandSection register={register} />
-                <ColorSection register={register} />
+        <Overlay>
+          <ModalBody>
+            <ModalHead>
+              <h2>Підбір параметрів</h2>
+              <CloseIcon onClick={filterModalToggle} />
+            </ModalHead>
 
-                <Button type="submit">Filter</Button>
-              </form>
-            </ModalBody>
-          </Overlay>
-        </>
+            <form onSubmit={handleSubmit(onSubmitHandler)}>
+              <BrandSection register={register} />
+              <ColorSection register={register} />
+
+              <Button type="submit">Filter</Button>
+            </form>
+          </ModalBody>
+        </Overlay>
       )}
     </StyledMain>
   );

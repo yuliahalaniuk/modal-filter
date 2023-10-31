@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { createContext, ReactNode } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { FilterProvider } from "@/components/Test";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,7 +60,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body className={inter.className}>
         <AppContext.Provider value={{ brandList, colorList }}>
-          {children}
+          <FilterProvider>{children}</FilterProvider>
         </AppContext.Provider>
       </body>
     </html>

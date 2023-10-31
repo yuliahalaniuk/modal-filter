@@ -1,9 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "@/app/layout";
-
-interface SectionProps {
-  register: any;
-}
+import { UseFormRegister } from "react-hook-form";
 import {
   Dropdown,
   CategoriesList,
@@ -11,6 +8,10 @@ import {
   IconDown,
   CheckBox,
 } from "@/app/PageStyled";
+
+interface SectionProps {
+  register: UseFormRegister<FormData>;
+}
 
 export const ColorSection: React.FC<SectionProps> = ({ register }) => {
   const [isOpen, setIsOpen] = useState(false);
