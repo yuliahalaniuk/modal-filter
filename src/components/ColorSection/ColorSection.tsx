@@ -36,7 +36,7 @@ export const ColorSection: React.FC<SectionProps> = ({ register }) => {
               <CheckBox
                 type="checkbox"
                 id={id}
-                {...register("color")}
+                // {...register("color")}
                 value={color}
               />
               <label htmlFor={id}>{label} </label>

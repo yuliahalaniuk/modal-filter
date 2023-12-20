@@ -59,12 +59,13 @@ export const ModalBody = styled.div`
   height: 100vh;
   min-width: 250px;
   width: 30%;
-  background-color: #fff;
+  background-color: #000;
   padding: 30px 20px;
   position: relative;
   font-size: 14px;
   font-weight: 400;
   overflow-y: scroll;
+  color: #fff;
 `;
 
 export const ModalHead = styled.div`
@@ -126,7 +127,7 @@ export const IconDown = styled(AiOutlineDown)`
 `;
 
 export const CheckBox = styled.input`
-  width: 12px;
+  /* width: 12px;
   height: 12px;
   margin: 5px;
   -webkit-appearance: none;
@@ -144,5 +145,30 @@ export const CheckBox = styled.input`
   &:checked::after {
     content: "✔";
     color: red;
+  } */
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  cursor: pointer;
+
+  &::before {
+    /* content: url("/unchecked.svg"); */
+    display: block;
+    content: " ";
+    background-image: url("/unchecked.svg");
+    background-size: 28px 28px;
+    height: 28px;
+    width: 28px;
+  }
+
+  &:checked::before {
+    background-image: url("/checked.svg");
   }
 `;
+
+// const RadioButton = styled.input`
+
+// `;

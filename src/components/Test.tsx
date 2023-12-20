@@ -88,3 +88,132 @@ const colorList = [
   { wr: "67", label: "Facebook", brand: "Facebook", id: "brand-TtU12" },
   { wr: "89", label: "Volkswagen", brand: "Volkswagen", id: "brand-VvW13" },
 ];
+
+// const vrMap: any = {};
+
+// variationsArray?.forEach((item) => {
+//   const checkDoubleId = (id: string) => {
+//     if (Array.isArray(vrMap[item.parent._id])) {
+//       if (
+//         vrMap[item.parent._id].some(
+//           (existingItem: any) => existingItem._id === id
+//         )
+//       ) {
+//         return vrMap[item.parent._id];
+//       }
+//     }
+//     return [...vrMap[item.parent._id], item];
+//   };
+
+//   if (item.parent._id) {
+//     vrMap[item.parent._id] = Array.isArray(vrMap[item.parent._id])
+//       ? checkDoubleId(item._id)
+//       : [item];
+//   }
+// });
+
+// variationsArray?.forEach(item => {
+// console.log('item', item);
+
+// const checkDoubleId = (item: any) => {
+//   // console.log('include', uniqueIds.includes(id));
+//   // return uniqueIds.includes(id) ? [item] : [];
+//   console.log(item._id);
+//   uniqueIds.includes(item._id)
+//     ? newNew[item.parent._id]
+//     : [...newNew[item.parent._id], item];
+// };
+
+// console.log('newNew[item.parent._id]', newNew[item.parent._id]);
+// if (item.parent._id) {
+//   newNew[item.parent._id] = Array.isArray(newNew[item.parent._id])
+//     ? checkDoubleId(item)
+//     : [item];
+
+//   // newNew[item.parent._id] = newNew[item.parent._id] || [];
+//   // newNew[item.parent._id] = newNew[item.parent._id].concat(
+//   //   checkDoubleId(item?._id)
+//   // );
+// }
+
+// const checkDoubleId = () => {
+//   // console.log('item', item);
+//   // console.log(
+//   //   ' uniqueIds.includes(item._id)',
+//   //   uniqueIds.includes(item._id)
+//   // );
+
+//   return uniqueIds.includes(item._id)
+//     ? newNew[item.parent._id]
+//     : [...newNew[item.parent._id], item];
+// };
+
+//   if (item.parent._id) {
+//     newNew[item.parent._id] = Array.isArray(newNew[item.parent._id])
+//       ? checkDoubleId()
+//       : [item];
+//   }
+// });
+
+// const checkDoubleId = (id: string) => {
+//   if (Array.isArray(newNew[item.parent._id])) {
+//     if (
+//       newNew[item.parent._id].some(
+//         (existingItem: any) => existingItem._id === id
+//       )
+//     ) {
+//       return newNew[item.parent._id];
+
+// const variationsArray = info?.data?.variations
+//   ?.map(vr => vr?.properties)
+//   ?.flat(1);
+
+// const test: Record<string, IPropertyValue> = {};
+
+// Object.assign(
+//   test,
+//   ...variationsArray.map(value => {
+//     return {
+//       [value._id]: value,
+//     };
+//   })
+// );
+
+// // console.log('test', test);
+
+// const sortedProperties: any = {};
+
+// Object.entries(test).forEach(([id, value]: any[]) => {
+//   if (value.parent._id) {
+//     sortedProperties[value.parent._id] = Array.isArray(
+//       sortedProperties[value.parent._id]
+//     )
+//       ? [...sortedProperties[value.parent._id], value.]
+//       : [value];
+//   }
+// });
+
+// console.log('newTest', sortedProperties);
+
+// **********************
+
+// const nexConst: Record<
+//   string,
+//   { item: IProperty; childrenList: IPropertyValue[] }
+// > = {};
+
+// const sortedProperties = variationsArray?.map(value => {
+//   let parentData = nexConst[value.parent._id];
+
+//   parentData = {
+//     ...parentData,
+//     item: value.parent,
+//     childrenList: parentData?.childrenList
+//       ? [...parentData?.childrenList, value]
+//       : [value],
+//   };
+
+//   return parentData;
+// });
+
+// console.log('sortedarray', sortedProperties);
