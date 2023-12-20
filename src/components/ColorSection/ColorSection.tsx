@@ -10,7 +10,7 @@ import {
 } from "@/app/PageStyled";
 
 interface SectionProps {
-  register: UseFormRegister<FormData>;
+  register: any;
 }
 
 export const ColorSection: React.FC<SectionProps> = ({ register }) => {
